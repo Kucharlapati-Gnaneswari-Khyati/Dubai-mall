@@ -1,0 +1,140 @@
+.attractions-horizontal-section {
+  position: relative;
+  height: 360vh;
+  background:
+    radial-gradient(circle at top, rgba(212, 175, 55, 0.1), transparent 26%),
+    linear-gradient(180deg, #050505 0%, #070707 48%, #030303 100%);
+}
+
+.attractions-sticky-shell {
+  position: sticky;
+  top: 0;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.attractions-intro {
+  position: absolute;
+  top: clamp(5rem, 9vh, 7rem);
+  left: 50%;
+  z-index: 3;
+  width: min(34rem, calc(100% - 2.5rem));
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.attractions-track {
+  display: flex;
+  width: 400vw;
+  height: 100vh;
+}
+
+.attractions-panel {
+  position: relative;
+  width: 100vw;
+  min-width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: flex-end;
+  padding: clamp(1.5rem, 4vw, 3rem);
+  background-position: center;
+  background-size: cover;
+}
+
+.attractions-panel::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(0, 0, 0, 0.68) 0%, rgba(0, 0, 0, 0.18) 45%, rgba(0, 0, 0, 0.78) 100%),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.08) 0%, rgba(0, 0, 0, 0.84) 100%);
+}
+
+.attractions-panel-content {
+  position: relative;
+  z-index: 1;
+  width: min(32rem, 100%);
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 30px;
+  background: linear-gradient(180deg, rgba(8, 8, 8, 0.32), rgba(8, 8, 8, 0.72));
+  backdrop-filter: blur(16px);
+}
+
+.attractions-panel-kicker {
+  display: inline-flex;
+  margin-bottom: 0.9rem;
+  color: var(--color-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.78rem;
+}
+
+.attractions-panel-content h3 {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3.75rem);
+  line-height: 1.02;
+}
+
+.attractions-panel-content p {
+  margin-top: 1rem;
+  font-size: 1.04rem;
+  line-height: 1.7;
+  color: var(--color-text-muted);
+}
+
+.attractions-panel-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.4rem;
+}
+
+.attractions-panel-meta span {
+  padding: 0.72rem 1rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.attractions-panel-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 1.4rem;
+  color: #fff;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .attractions-horizontal-section {
+    height: auto;
+  }
+
+  .attractions-sticky-shell {
+    position: relative;
+  }
+
+  .attractions-intro {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: auto;
+    transform: none;
+    padding-top: 5.5rem;
+    padding-bottom: 1.5rem;
+    text-align: left;
+  }
+
+  .attractions-track {
+    display: grid;
+    width: 100%;
+    height: auto;
+  }
+
+  .attractions-panel {
+    width: 100%;
+    min-width: 100%;
+    min-height: 72vh;
+  }
+}

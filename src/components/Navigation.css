@@ -1,0 +1,106 @@
+.nav-hud {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  width: 100%;
+  padding: 0.65rem 0;
+  border-radius: 0;
+  background: rgba(8, 8, 8, 0.72);
+  backdrop-filter: blur(22px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.nav-container {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 1rem;
+  min-width: 0;
+  width: min(1440px, 100%);
+  margin: 0 auto;
+  padding: 0 clamp(1.25rem, 3vw, 2.5rem);
+}
+
+.nav-brand {
+  padding: 0.4rem 0;
+  font-family: var(--font-display);
+  font-size: 0.88rem;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  gap: 0.3rem;
+  list-style: none;
+  min-width: 0;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.5rem;
+  padding: 0.55rem 0.85rem;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--color-text-soft);
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+  text-align: center;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--color-text);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.nav-action {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.nav-action .nav-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.5rem;
+  padding: 0.55rem 1.1rem;
+  border-radius: 12px;
+  background: linear-gradient(180deg, rgba(221, 199, 161, 0.96), rgba(214, 184, 135, 0.86));
+  color: #0a0a0a;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  transition: transform var(--transition-fast), filter var(--transition-fast);
+  text-align: center;
+}
+
+.nav-action .nav-btn:hover,
+.nav-action .nav-btn.active-btn {
+  transform: translateY(-1px);
+  filter: brightness(1.04);
+}
+
+@media (max-width: 960px) {
+  .nav-container {
+    grid-template-columns: auto auto;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .nav-hud {
+    padding: 0.55rem 0;
+  }
+}
